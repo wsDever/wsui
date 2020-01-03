@@ -1,0 +1,18 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "modules": false,
+      "targets": {
+        "browsers": ["iOS >= 8", "Android >= 4"]
+      }
+    }],
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/proposal-class-properties", { "loose": true }],
+    "@babel/plugin-transform-runtime",
+    "@babel/proposal-object-rest-spread",
+    "@babel/plugin-syntax-dynamic-import"
+  ]
+}
