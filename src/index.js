@@ -1,10 +1,10 @@
 
 import Vue from 'vue';
 import App from './app.vue';
-import WSUI from '../src/components/install.js'
-// import WSUI  from '../dist/main.js'
+import Wsui from '../src/components/install.js'
+// import Wsui  from '../dist/main.js'
 
-Vue.use(WSUI)
+Vue.use(Wsui)
 
 new Vue({
     el: '#app',

@@ -70,6 +70,9 @@
 
     }
     mounted() {  
+      // this.$wsuiToast({"message": "测试测试测试测试测试测试",showClose: false, 'position': 'right-top' });
+      this.$wsuiNotify({message: '看看我给哈哈哈哈哈哈哈哈哈测试测试测试测试测试测试'})
+      this.$wsuiNotify({durition: 5,onClick:() => { alert(0) }})
     }
   }
 </script>
