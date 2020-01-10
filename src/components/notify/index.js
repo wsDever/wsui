@@ -5,7 +5,8 @@ let seek = 0;
 export default {
   install (Vue) {
     Vue.prototype.$wsuiNotify = (option) => {
-      let options = Object.assign({ id: `${ seek ++ }` }, option)
+      let params = typeof options === 'string' ? { message: option } : option
+      let options = Object.assign({ id: `${ seek ++ }` }, params)
       let instance = getInstance(Vue)
       instance.add(options);
     }

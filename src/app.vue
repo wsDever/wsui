@@ -44,6 +44,40 @@
       </WsuiInput>
     </div>
 
+    <div>
+      <WsuiPagination 
+      :totalPage="50"
+      :currPage="0"
+      :hideIfOnePage="false"
+      @onChange="onPageChange"
+      />
+    </div>
+
+    <div style="margin-top: 50px;">
+      <wsui-tabs v-model="activeKey" @change="onChangeTabs" @delete="onDeleteTabs" deletabled>
+        <wsui-tab-item title="tab 1" name="1" v-if="nameLists.includes(1)">
+          content of tab 1
+        </wsui-tab-item>
+        <wsui-tab-item title="tab 2" name="2" :deletabled="false" v-if="nameLists.includes(2)">
+          content of tab 2
+        </wsui-tab-item>
+        <wsui-tab-item title="tab 3" name="3" disabled v-if="nameLists.includes(3)">
+          content of tab 3
+        </wsui-tab-item>
+        <wsui-tab-item title="tab a" name="a" v-if="nameLists.includes('a')">
+          content of tab a
+        </wsui-tab-item>
+        <wsui-tab-item title="tab b" name="b" v-if="nameLists.includes('b')">
+          content of tab b
+        </wsui-tab-item>
+        <wsui-tab-item title="tab c" name="c" v-if="nameLists.includes('c')">
+          content of tab c
+        </wsui-tab-item>
+      </wsui-tabs>
+    </div>
+    <div style="margin-top: 50px;">
+      
+    </div>
   </div>
 </template>
 
@@ -66,13 +100,24 @@
   })
   export default class HomePage extends Vue {
     userName=""
+    activeKey="1"
+    nameLists=[1,2,3,'a','b','c']
     emitEmpty(){
 
     }
     mounted() {  
       // this.$wsuiToast({"message": "测试测试测试测试测试测试",showClose: false, 'position': 'right-top' });
-      this.$wsuiNotify({message: '看看我给哈哈哈哈哈哈哈哈哈测试测试测试测试测试测试'})
-      this.$wsuiNotify({durition: 5,onClick:() => { alert(0) }})
+      // this.$wsuiNotify({message: '看看我给哈哈哈哈哈哈哈哈哈测试测试测试测试测试测试'})
+      // this.$wsuiNotify({durition: 5,onClick:() => { alert(0) }})
+    }
+    onPageChange(i){
+      console.log(i);
+    }
+    onChangeTabs(name) {
+      // console.log('name', name);
+    }
+    onDeleteTabs(name){
+      this.nameLists = this.nameLists.filter(item => item != name);
     }
   }
 </script>
