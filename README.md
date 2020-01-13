@@ -1,44 +1,37 @@
-<!-- ## vue图片展示插件
+## wsui
 
 #### 主要功能
 ###### 图片查看，支持图片放大、缩小、翻转等功能
 
 #### 使用方法
 ###### 安装
-> npm i wue-picture-show
+> npm i wsui
 
-###### 引入
+###### 初始化引入
 ```
-import pictureShow from wue-picture-show
-```
-
-###### 页面中添加组件
-```
-<picture-show ref="imgx"></picture-show>
+import Wsui  from 'wsui'
+Vue.use(Wsui)
 ```
 
-###### 使用
+###### 页面中使用
 ```
- this.$refs.imgx.show({
-     url:'./xxx.png',
-     toolbar: true
- })
+<WsuiIcon type="home" :round=true />
+<WsuiInput :require=true />
 ```
-#### 参数说明
+或
 ```
-url: string          ---- 要展示的图片地址
-toolbar: boolen      ---- 是否显示工具栏，默认不显示
-tools: Array         ---- 工具栏（放大，缩小，旋转）
-onClose: func        ---- 关闭图片时的函数 ，默认空
+<wsui-input :require=true />
+<wsui-button>确认</wsui-button>
 ```
+
 #### 更新记录
-###### 2019-06-13 -1.0.0
-###### 1、点击图片可查看
-###### 2、关闭添加回调函数
 
-###### 2019-06-17 -2.0.0
-###### 1、添加图片旋转、放大、缩小功能
+##### v1.0.0
+
+###### 1、添加button、input、icon组件-20191228
+###### 2、添加toast、notify组件-20200103
+###### 3、添加pagination、tab组件-20200108
 
 
-#### Demo效果 -->
-<!-- [点击查看](https://wsdever.github.io/vue-picture-show/) -->
+#### 文档及Demo
+[点击查看](http://wsui.3yyy.top/)
